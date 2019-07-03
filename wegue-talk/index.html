@@ -66,7 +66,7 @@
           <h2>Gliederung</h2>
           <ul>
             <li>Über&hellip;</li>
-            <li>Was ist Wegue? / was ist es nicht?</li>
+            <li>Das Wegue Projekt</li>
             <li>Neuerungen</li>
             <li>Beispiele aus der Praxis</li>
           </ul>
@@ -166,11 +166,11 @@
           <h2>Wegue</h2>
           <ul>
             <li>Template für leichtgewichtigen WebGIS-Client-Anwendungen</li>
-            <li>Lizenz: BSD-2-Clause</li>
             <li>Kombiniert <a href="https://vuejs.org/">Vue.js</a> und <a href="https://openlayers.org">OpenLayers</a></li>
             <li>Wiederverwendbare WebGIS-UI-Komponenten</li>
             <li>Konfigurierbar mittels JSON</li>
             <li>Beliebiger JavaScript-Code ergänzbar</li>
+            <li>Lizenz: BSD-2-Clause</li>
             <li><a href="https://github.com/meggsimum/wegue" title="Wegue Code Repository">Code (github)</a></li>
           </ul>
         </section>
@@ -179,11 +179,12 @@
           <h2>Vue.js</h2>
           <ul>
             <li>Clientseitiges JavaScript-Webframework (MVVM)</li>
-            <li>Lizenz: MIT</li>
             <li>Flexibel einsetzbar (Standalone & Embedded)</li>
             <li>Einfache API, leicht zu erlernen</li>
+            <li>Mächtige Template-Engine</li>
             <li>Projektstruktur ohne zu viele Einschränkungen</li>
             <li>Two-Way-Binding, Direktiven, (vererbbare) Komponenten, ...</li>
+            <li>Lizenz: MIT</li>
           </ul>
         </section>
 
@@ -195,9 +196,9 @@
           </blockquote>
           <ul>
             <li>JavaScript Mapping-Bibliothek</li>
-            <li>Lizenz: BSD</li>
             <li>OSGeo Projekt</li>
             <li>Viele Daten- & Layerquellen, Interaktionen & Steuerelemente, ...</li>
+            <li>Lizenz: BSD</li>
           </ul>
         </section>
 
@@ -240,8 +241,9 @@
             <ul>
               <li>Flexiblere Nutzung</li>
               <li>Verbesserte Updatefähigkeit</li>
+              <li>Mehr Hooks für eigene Code Erweiterung</li>
             </ul>
-            <li>Mehr Hooks für eigene Code Erweiterung</li>
+            <li>Dynamische Konfiguration per URL-Parameter</li>
             <li>Vektor-Styling über Konfiguration</li>
             <li>Verbesserte Testabdeckung (> 80%)</li>
             <li>Upgrade auf neueste Basis-Bibliotheken</li>
@@ -259,7 +261,6 @@
     {
       "type": "OSM",
       "lid": "osm-bg",
-      "isBaseLayer": false,
       "visible": true
     }
   ]
@@ -280,23 +281,31 @@
   "baseColor": "green darken-3",
   "logo": "https://dummyimage.com/100x100/383/fff&text=Wegue",
   "logoSize": "100",
-  "footerTextLeft": "Custom Footer",
-  "footerTextRight": "My Copyright",
-  "showCopyrightYear": true,
   "mapZoom": 14,
   "mapCenter": [1453914, 6071774],
   "mapLayers": [
     {
       "type": "WMS",
       "lid": "terrestris-osm-wms",
+      "name": "OSM WMS",
       "format": "image/png",
-      "layers": "OSM-WMS",
       "url": "http://ows.terrestris.de/osm-gray/service",
+      "layers": "OSM-WMS",
       "projection": "EPSG:3857",
-      "attributions": "<a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap-Mitwirkende</a>",
-      "isBaseLayer": false
+      "attributions": "<a href='https://www.openstreetmap.org/copyright' target='_blank'>© OpenStreetMap-Mitwirkende</a>"
     }
-  ]
+  ],
+  "modules": {
+    "wgu-zoomtomaxextent": {
+      "target": "toolbar",
+      "darkLayout": true
+    },
+    "wgu-layerlist": {
+      "target": "menu",
+      "win": true,
+      "draggable": false
+    }
+  }
 }
           </code></pre>
         </section>
@@ -320,7 +329,7 @@
         </section>
 
         <section>
-          <h2>WebGIS-App (eigene App)</h2>
+          <h2>WebGIS-App Template</h2>
           <p>
              <code>src/src/WguAppTemplate.vue</code> erweitern in
              <code>app/WguApp.vue</code>
@@ -392,7 +401,7 @@
         </section>
 
         <section>
-          <h2>WebGIS-App (eigene App)</h2>
+          <h2>WebGIS-App Template</h2>
           <img src="img/weinstrassenreise-webgis.png" alt="">
         </section>
 
@@ -481,9 +490,10 @@
         <section>
           <h2>Ausblick</h2>
           <ul>
-            <li>Upgrade OpenLayers v6.0.0</li>
+            <li>Upgrade OpenLayers v6.0.0 (vorbereitet)</li>
             <li>Docker-Image (WIP)</li>
-            <li>Herauslösung der Komponenten als Bibliothek?</li>
+            <li>GUI / Anwendung zur Erzeugung App-Konfig</li>
+            <li>Herauslösung der UI-Komponenten als Bibliothek?</li>
             <li>Verbesserung Dokumentation & HowTo / Get Started</li>
             <li>Community aufbauen</li>
           </ul>
@@ -492,7 +502,7 @@
         <section id="thanks-questions">
           <h4>Vielen Dank</h4>
           <hr />
-          <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+          <h1 style="font-size:2.8em">Fragen &amp; Anmerkungen?</h1>
           <hr />
           <p class="subtle">
             <a href="#/imprint">Impressum</a>
@@ -506,7 +516,7 @@
             <address style="">
               <strong>Christian Mayer</strong><br />
               <span style="font-size: smaller;">
-              meggsimum Geoinformatik<br />
+              meggsimum &dash; Büro für Geoinformatik<br />
               Schillerstraße 2a<br />
               67112 Mutterstadt<br />
               info@meggsimum.de
