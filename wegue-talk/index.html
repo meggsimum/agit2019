@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="author" content="Christian Mayer" />
     <title>Wegue - OpenLayers und Vue.js in der Praxis | Vortrag auf der AGIT 2019, Salzburg</title>
-    <meta name="description" content="Wegue - WebGIS-Anwendungen mit OpenLayers und Vue.js" />
+    <meta name="description" content="Wegue - OpenLayers und Vue.js in der Praxis" />
     <!--[if lt IE 9]>
     <script src="../shared/lib/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
     <![endif]-->
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../shared/lib/reveal.js-3.6.0/css/reveal.css" />
     <link rel="stylesheet" href="../shared/lib/reveal.js-3.6.0/css/theme/white.css" />
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Cantarell" rel="stylesheet">
     <link rel="stylesheet" href="../shared/css/customized.css" />
     <link rel="stylesheet" href="../shared/css/meggsimum.css" />
@@ -128,40 +127,6 @@
           <div style="clear:both"></div>
         </section>
 
-        <!-- <section>
-          <h2>Naming is hard 😊😵😊</h2>
-          <p>
-            vue-ol-webapp-boilerplate ➡️
-            <span style="font-weight: bold;">We</span>b<span style="font-weight: bold;">G</span>IS with V<span style="font-weight: bold;">ue</span>.js and OpenLayers ➡️
-            <span style="font-weight: bold;">Wegue</span>
-          </p>
-
-          <img src="img/wagyu.jpg" alt="">
-          <p style="margin-top: 0; font-size: 11px;">
-            By <a href="//commons.wikimedia.org/wiki/User:Cgoodwin" title="User:Cgoodwin">Cgoodwin</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by/3.0" title="Creative Commons Attribution 3.0">CC BY 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=3575704">Link</a>
-          </p>
-        </section>
-
-        <section>
-          <h2>Motivation</h2>
-          <h4>Yet another JS-Webmapping Framework?</h4>
-
-          <img src="img/word-cloud-js-frameworks.png" alt="">
-        </section> -->
-
-        <!-- <section>
-          <h2>Motivation</h2>
-          <ul>
-            <li>Aufhänger: Kundenprojekt Ende 2017</li>
-            <li>Flexible Lizenz (Kein GPL)</li>
-            <li>Optimiert für alle Endgeräte</li>
-            <li>EcmaScript fähig</li>
-            <li>Flexibel einsetzbar (Standalone & Embedded)</li>
-            <li>Konfigurierbar</li>
-            <li>Schlankes WebGIS Template für weitere Anwendungen</li>
-          </ul>
-        </section> -->
-
         <section>
           <h2>Wegue</h2>
           <ul>
@@ -169,7 +134,9 @@
             <li>Kombiniert <a href="https://vuejs.org/">Vue.js</a> und <a href="https://openlayers.org">OpenLayers</a></li>
             <li>Wiederverwendbare WebGIS-UI-Komponenten</li>
             <li>Konfigurierbar mittels JSON</li>
+            <li>EcmaScript</li>
             <li>Beliebiger JavaScript-Code ergänzbar</li>
+            <li>Optimiert für alle Endgeräte</li>
             <li>Lizenz: BSD-2-Clause</li>
             <li><a href="https://github.com/meggsimum/wegue" title="Wegue Code Repository">Code (github)</a></li>
           </ul>
@@ -206,17 +173,6 @@
           <h2>Wegue Architektur</h2>
             <img src="img/wegue-architecture.png" class="plain" />
         </section>
-
-        <!-- <section>
-          <h2>Unterstützte Layertypen</h2>
-          <ul>
-            <li>OGC WMS</li>
-            <li>XYZ (TMS, WMTS, etc.)</li>
-            <li>Vektor-Layer (GeoJSON oder KML)</li>
-            <li>VectorTiles (MVT, GeoJSON oder TopoJSON)</li>
-            <li>OpenStreetMap</li>
-          </ul>
-        </section> -->
 
         <section>
           <h2>Komponenten</h2>
@@ -402,51 +358,8 @@
 
         <section>
           <h2>WebGIS-App Template</h2>
-          <img src="img/weinstrassenreise-webgis.png" alt="">
+          <img src="img/weinstrassenreise-webgis.png" style="width: 75%;" alt="">
         </section>
-
-        <!-- <section>
-          <h2>JSON-Konfiguration</h2>
-          <ul>
-            <li>App-Template wird kompiliert</li>
-            <ul>
-              <li>Keine Veränderung ohne Build-Prozess</li>
-              <li>Unflexibel</li>
-              <li>Schwierig für "Nicht-Coder"</li>
-            </ul>
-          </ul>
-          <h3 style="margin-top:30px;">➡️ Konfiguration in JSON-Datei</h3>
-        </section>
-
-        <section>
-          <h2>JSON-Konfiguration</h2>
-          <pre><code data-trim>
-{
-  "title": "Vue.js / OpenLayers WebGIS",
-  "logo": "static/img/meggsimum-icon-rw-500.png",
-  "logoSize": "100",
-  "mapZoom": 14,
-  "mapCenter": [925067, 6348943],
-  "mapLayers": [
-    {
-      "type": "WMS",
-      "lid": "ahocevar-wms",
-      "name": "WMS (ahocevar)",
-      "format": "image/png",
-      "layers": "topp:states",
-      "url": "https://ahocevar.com/geoserver/wms"
-    },
-    {
-      "type": "OSM",
-      "lid": "osm-bg",
-      "name": "OSM",
-      "visibility": true
-    }
-  ]
-}
-          </code></pre>
-
-        </section> -->
 
         <section>
           <h1>Beispiele aus der Praxis</h1>
